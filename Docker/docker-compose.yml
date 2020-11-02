@@ -11,3 +11,9 @@ services:
     command: /usr/sbin/nginx -c /etc/nginx/nginx.conf
     environment:
      - LD_LIBRARY_PATH=/usr/local/lib
+  upstream:
+    container_name: upstream
+    build:
+      context: ..
+      dockerfile: Docker/upstream/Dockerfile
+    command: python -m http.server 8090

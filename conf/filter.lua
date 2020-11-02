@@ -12,5 +12,5 @@ if string.match(uri, "beacon") then
     ngx.say('This URL is blocked')
     ngx.exit(403);
 else
-    ngx.say("OK!")
+
 end
