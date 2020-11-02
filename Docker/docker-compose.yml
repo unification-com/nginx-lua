@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    build:
+      context: ..
+      dockerfile: Docker/nginx/Dockerfile
+    ports:
+      - 8080:80
+    command: /usr/sbin/nginx -c /etc/nginx/nginx.conf
+    environment:
+     - LD_LIBRARY_PATH=/usr/local/lib
